@@ -31,8 +31,7 @@ stages:
       displayName: "Build Transocde Daemon"
       inputs:
         command: 'publish'
-        publishWebProjects: true
-        arguments: '-c Release'
+        publishWebProjects: false
         zipAfterPublish: false
 
     - task: Docker@2
