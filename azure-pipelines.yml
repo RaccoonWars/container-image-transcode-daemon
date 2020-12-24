@@ -22,16 +22,6 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
 
-    - task: DownloadPackage@1
-      inputs:
-        packageType: 'upack'
-        feed: 'd0b511a7-5c5f-4f17-b663-8a928fdaddea/cf1ba1bd-e9d2-4125-81cc-122214ee89b4'
-        view: 
-        definition: 'aefd56a4-0495-4181-9b23-5fd47b355c26'
-        version: '4.0.0'
-        downloadPath: '$(Build.SourcesDirectory)/ndisdk'
-        extract: true
-
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
