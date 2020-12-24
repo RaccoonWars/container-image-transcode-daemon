@@ -14,6 +14,6 @@ FROM mcr.microsoft.com/dotnet/runtime:3.1
 #     zlib1g-dev \
 #     wget
 
-COPY bin/Release/netcoreapp3.1/publish /app
+COPY src/Transcode/bin/Release/netcoreapp3.1/publish /app
 WORKDIR /app
 ENTRYPOINT ["dotnet", "Transcode.dll"]
