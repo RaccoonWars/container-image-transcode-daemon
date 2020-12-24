@@ -40,7 +40,7 @@ stages:
         repository: 'raccoonwars/transocde'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/src/Transcode/dockerfile'
-git st        buildContext: '$(Build.SourcesDirectory)/'
+        buildContext: '$(Build.SourcesDirectory)/'
         tags: |
           $(Build.BuildNumber)
           latest
