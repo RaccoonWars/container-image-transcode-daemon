@@ -6,4 +6,8 @@
     <RootNamespace>RaccoonWars.Transcode</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PinkHair.Common.Telemetron.Console" Version="3.2005.3" />
+  </ItemGroup>
+
 </Project>

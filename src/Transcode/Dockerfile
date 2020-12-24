@@ -14,6 +14,6 @@ RUN apt-get install -y \
     zlib1g-dev \
     wget
 
-COPY src/Transcode/bin/Release/netcoreapp3.1/publish /app
+COPY bin/Release/netcoreapp3.1/publish /app
 WORKDIR /app
 ENTRYPOINT ["dotnet", "Transcode.dll"]
