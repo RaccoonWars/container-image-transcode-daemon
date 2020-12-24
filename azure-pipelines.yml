@@ -22,6 +22,11 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: 'Push-Location $(Build.SourcesDirectory); Get-ChildItem -Recurse'
+    
     - task: DotNetCoreCLI@2
       displayName: "Build Transocde Daemon"
       inputs:
