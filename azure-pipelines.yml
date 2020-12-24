@@ -26,7 +26,7 @@ stages:
       displayName: "Build Transocde Daemon"
       inputs:
         command: 'build'
-        projects: '$(Build.SourcesDirectory)/src/Transcode/Transocde.csproj'
+        projects: '$(Build.SourcesDirectory)/**/*.csproj'
         arguments: 'publish -c Release'
     - task: PowerShell@2
       inputs:
