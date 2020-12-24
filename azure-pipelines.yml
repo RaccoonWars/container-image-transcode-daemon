@@ -21,17 +21,12 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-
-    - task: DownloadPackage@1
+    
+    - task: DotNetCoreCLI@2
       inputs:
-        packageType: 'upack'
-        feed: 'd0b511a7-5c5f-4f17-b663-8a928fdaddea/cf1ba1bd-e9d2-4125-81cc-122214ee89b4'
-        view: 
-        definition: 'aefd56a4-0495-4181-9b23-5fd47b355c26'
-        version: '4.0.0'
-        downloadPath: '$(Build.SourcesDirectory)/ndisdk'
-        extract: true
-
+        command: 'build'
+        projects: '$(Build.SourcesDirectory)/container-image-transocde-daemon.sln'
+        arguments: 'publish -c Release'
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
@@ -40,10 +35,10 @@ stages:
     - task: Docker@2
       displayName: "Build and NDI Discovery Service"
       inputs:
-        containerRegistry: 'home-core-dockerhub'
-        repository: 'fargobose/ndi-directory'
+        containerRegistry: 'DockerHub-RaccoonWars'
+        repository: 'raccoonwars/transocde'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/src/Transcode/dockerfile'
         buildContext: '$(Build.SourcesDirectory)/'
         tags: |
           $(Build.BuildNumber)
