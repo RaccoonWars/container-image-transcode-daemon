@@ -40,7 +40,7 @@ stages:
         containerRegistry: 'DockerHub-RaccoonWars'
         repository: 'raccoonwars/transocde'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/src/Transcode/dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/src/Transcode/Dockerfile'
         buildContext: '$(Build.SourcesDirectory)/'
         tags: |
           $(Build.BuildNumber)
